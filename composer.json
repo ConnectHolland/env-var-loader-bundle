@@ -1,0 +1,53 @@
+{
+    "name": "connectholland/env-var-loader-bundle",
+    "type": "symfony-bundle",
+    "description": "A symfony 5 bundle with various environment variable loaders",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Reyo Stallenberg",
+            "email": "reyostallenberg@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "symfony/config": "^5.0",
+        "symfony/dependency-injection": "^5.0",
+        "symfony/framework-bundle": "^5.0"
+    },
+    "require-dev": {
+        "alextartan/guzzle-psr18-adapter": "^2.0",
+        "csharpru/vault-php": "^4.0",
+        "laminas/laminas-diactoros": "^2.2",
+        "phar-io/composer-plugin": "dev-master",
+        "sensiolabs/security-checker": "^6.0",
+        "start-point/etcd-php": "^1.1"
+    },
+    "suggest": {
+        "csharpru/vault-php": "To use HashiCorp Vault as vault install csharpru/vault-php and e.g. alextartan/guzzle-psr18-adapter and zendframework/zend-diactoros",
+        "start-point/etcd-php": "To use Etcd as vault install start-point/etcd-php"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "analyse": [
+            "composer validate --no-check-lock",
+            "composer-require-checker",
+            "security-checker security:check",
+            "phpstan analyse --level=7 src/ tests/",
+            "composer-unused --no-ansi"
+        ],
+        "fix": [
+            "php-cs-fixer fix --allow-risky=yes",
+            "composer validate --no-check-lock",
+            "composer-normalize --no-update-lock"
+        ],
+        "test": [
+            "phpunit"
+        ]
+    }
+}

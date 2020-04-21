@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<phive xmlns="https://phar.io/phive">
+  <phar name="composer-normalize" version="^2.2.0" installed="2.3.2" location="./bin/composer-normalize" copy="true"/>
+  <phar name="composer-require-checker" version="^2.1.0" installed="2.1.0" location="./bin/composer-require-checker" copy="true"/>
+  <phar name="composer-unused" version="^0.7.1" installed="0.7.1" location="./bin/composer-unused" copy="true"/>
+  <phar name="php-cs-fixer" version="^2.16.1" installed="2.16.3" location="./bin/php-cs-fixer" copy="true"/>
+  <phar name="phpstan" version="^0.12.4" installed="0.12.19" location="./bin/phpstan" copy="true"/>
+  <phar name="phpunit" version="^8.5.2" installed="8.5.3" location="./bin/phpunit" copy="true"/>
+</phive>
