@@ -13,7 +13,8 @@
         "php": "^7.3",
         "symfony/config": "^4.4 || ^5.0",
         "symfony/dependency-injection": "^4.4 || ^5.0",
-        "symfony/framework-bundle": "^4.4 || ^5.0"
+        "symfony/framework-bundle": "^4.4 || ^5.0",
+        "symfony/http-kernel": "^4.4 || ^5.0"
     },
     "require-dev": {
         "alextartan/guzzle-psr18-adapter": "^2.0",
@@ -30,6 +31,16 @@
     "config": {
         "bin-dir": "bin",
         "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "ConnectHolland\\EnvVarLoaderBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ConnectHolland\\EnvVarLoaderBundle\\Tests\\": "tests/"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -49,5 +60,10 @@
         "test": [
             "phpunit"
         ]
+    },
+    "scripts-descriptions": {
+        "analyse": "Run analysers (composer validate, composer-require-checker, security-checker, phpstan and composer-unused).",
+        "fix": "Run fixers for code style and composer.",
+        "test": "Run the unittests."
     }
 }
